@@ -1495,17 +1495,58 @@
 //   );
 // }
 
+// export default function App(){
+//   return(
+//     <div className="Toolbar" onClick={() => {
+//       alert('You clicked on the div tag');
+//     }}>
+//       <button onClick={() => alert("Playing Movie!")}>
+//         Play Movie
+//       </button>
+//       <button onClick={() => alert("Playing !")}>
+//         Play Movie
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default function App(){
+//   return(
+//     <div className="ToolBar" onClick={() => {
+//       alert('You clicked on the div tag');
+//     }}>
+//       <button onClick={() => alert('Playing Movie!')}>
+//         Play Movie
+//       </button>
+//       <button onClick={() => alert('Uploading Image!')}>
+//         Upload Image
+//       </button>
+//     </div>
+//   );
+// }
+
+function Button({onClick, children}){
+  return(
+    <button onClick={e => {
+      e.stopPropagation();
+      onClick();
+    }}>
+      {children}
+    </button>
+  );
+}
+
 export default function App(){
   return(
     <div className="Toolbar" onClick={() => {
       alert('You clicked on the div tag');
     }}>
-      <button onClick={() => alert("Playing Movie!")}>
+      <Button onClick={() => alert('Playing Movie')}>
         Play Movie
-      </button>
-      <button onClick={() => alert("Playing !")}>
-        Play Movie
-      </button>
+      </Button>
+      <Button onClick={() => alert('Uploading Image')}>
+        Upload Image
+      </Button>
     </div>
   );
 }
