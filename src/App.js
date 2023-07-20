@@ -1525,28 +1525,76 @@
 //   );
 // }
 
-function Button({onClick, children}){
-  return(
-    <button onClick={e => {
-      e.stopPropagation();
-      onClick();
-    }}>
-      {children}
-    </button>
-  );
-}
+// function Button({onClick, children}){
+//   return(
+//     <button onClick={e => {
+//       e.stopPropagation();
+//       onClick();
+//     }}>
+//       {children}
+//     </button>
+//   );
+// }
 
-export default function App(){
+// export default function App(){
+//   return(
+//     <div className="Toolbar" onClick={() => {
+//       alert('You clicked on the div tag');
+//     }}>
+//       <Button onClick={() => alert('Playing Movie')}>
+//         Play Movie
+//       </Button>
+//       <Button onClick={() => alert('Uploading Image')}>
+//         Upload Image
+//       </Button>
+//     </div>
+//   );
+// }
+
+// function Button({onClick, children}){
+//   return(
+//     <button onClick={e => {
+//       e.stopPropagation();
+//       onClick();
+//     }}>
+//       {children}
+//     </button>
+//   );
+// }
+
+// export default function App(){
+//   return(
+//     <div className="Toolbar" onClick={() => {
+//       alert('You clicked the Toolbar!')
+//     }}>
+//       <Button onClick={() => alert('Playing Movie')}>
+//         Play Movie
+//       </Button>
+//       <Button onClick={() => alert('Upload Image')}>
+//         Upload Image
+//       </Button>
+//     </div>
+//   );
+// }
+// Preventing default behavior
+
+// export default function SignUp(){
+//   return(
+//     <form onSubmit={() => alert('Submitting Form!')}>
+//       <input />
+//       <button>Send</button>
+//     </form>
+//   );
+// }
+
+export default function Signup(){
   return(
-    <div className="Toolbar" onClick={() => {
-      alert('You clicked on the div tag');
+    <form onSubmit={e => {
+      e.preventDefault();
+      alert('Submitting this form')
     }}>
-      <Button onClick={() => alert('Playing Movie')}>
-        Play Movie
-      </Button>
-      <Button onClick={() => alert('Uploading Image')}>
-        Upload Image
-      </Button>
-    </div>
+      <input />
+      <button>Send</button>
+    </form>
   );
 }
