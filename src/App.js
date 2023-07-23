@@ -1587,14 +1587,115 @@
 //   );
 // }
 
-export default function Signup(){
+// export default function Signup(){
+//   return(
+//     <form onSubmit={e => {
+//       e.preventDefault();
+//       alert('Submitting this form')
+//     }}>
+//       <input />
+//       <button>Send</button>
+//     </form>
+//   );
+// }
+
+// Exercise 1
+
+// export default function LightSwitch() {
+//   function handleClick() {
+//     let bodyStyle = document.body.style;
+//     if (bodyStyle.backgroundColor === 'black') {
+//       bodyStyle.backgroundColor = 'white';
+//     } else {
+//       bodyStyle.backgroundColor = 'black';
+//     }
+//   }
+
+//   return (
+//     <button onClick={handleClick}>
+//       Toggle the lights
+//     </button>
+//   );
+// }
+
+// Exercise 2
+
+// export default function App({onChangeColor}){
+//   return(
+//     <button onClick={e => {
+//       e.stopPropagation();
+//       onChangeColor();
+//     }}>
+//       Change color
+//     </button>
+//   );
+// }
+
+
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   let index = 0;
+
+//   function handleClick(){
+//     index = index + 1;
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button onClick={handleClick}>
+//         Next
+//       </button>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} of {sculptureList.length})
+//       </h3>
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//       <p>
+//         {sculpture.description}
+//       </p>
+//     </>
+//   );
+// }
+
+import { sculptureList } from "./data";
+
+export default function App(){
+  let index = 0;
+
+  function handleClick(){
+    index = index + 1;
+  }
+
+  let sculpture = sculptureList[index];
+
   return(
-    <form onSubmit={e => {
-      e.preventDefault();
-      alert('Submitting this form')
-    }}>
-      <input />
-      <button>Send</button>
-    </form>
+    <>
+      <button onClick={handleClick}>
+        Next
+      </button>
+      <h2>
+        <i>{sculpture.name}</i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <img 
+        src={sculpture.url}
+        alt={sculpture.alt}
+      />
+      <p>
+        {sculpture.description}
+      </p>
+    </>
   );
 }
