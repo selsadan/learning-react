@@ -1766,43 +1766,493 @@
 //   );
 // }
 
+// import { useState } from "react";
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   const [index, setIndex] = useState(0);
+//   const [showMore, setShowMore] = useState(false);
+
+//   function handleClick(){
+//     setIndex(index + 1);
+//   }
+
+//   function handleMoreClick(){
+//     setShowMore(!showMore);
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button onClick={handleClick}>
+//         Next
+//       </button>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} 0f {sculptureList.length})
+//       </h3>
+//       <button onClick={handleMoreClick}>
+//         {showMore ? 'Hide' : 'Show'} details
+//       </button>
+//       {showMore && <p>{sculpture.description}</p>}
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//     </>
+//   );
+// }
+
+
+// import { useState } from "react";
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   const [index, setIndex] = useState(0);
+//   const [showMore, setShowMore] = useState(false);
+
+//   function handleClick(){
+//     setIndex(index + 1);
+//   }
+
+//   function handleMoreClick(){
+//     setShowMore(!showMore)
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button onClick={handleClick}>
+//         Next
+//       </button>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} of {sculptureList.length})
+//       </h3>
+//       <button onClick={handleMoreClick}>
+//         {showMore ? 'Hide' : 'Show'} details
+//       </button>
+//       {showMore && <p>{sculpture.description}</p>}
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//     </>
+//   );
+// }
+
+// import { useState } from "react";
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   const [index, setIndex] = useState(0);
+//   const [showMore, setShowMore] = useState(false);
+
+//   function handleClick(){
+//     setIndex(index + 1);
+//   }
+
+//   function handleMoreClick(){
+//     setShowMore(!showMore)
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button onClick={handleClick}>
+//         Next
+//       </button>
+//       <h1>Learning More About React useState</h1>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} of {sculptureList.length})
+//       </h3>
+//       <button onClick={handleMoreClick}>
+//         {showMore ? 'Hide' : 'Show'} datails
+//       </button>
+//       {showMore && <p>{sculpture.description}</p>}
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//     </>
+//   );
+// }
+
+// State is isolated and private
+
+// import Gallery from "./Gallery";
+
+// export default function App(){
+//   return(
+//     <div className="page">
+//       <Gallery />
+//       <br />
+//       <br />
+//       <Gallery />
+//     </div>
+//   );
+// }
+
+// When you press “Next” on the last sculpture, the code crashes. Fix the logic to prevent the crash. You may do this by adding extra logic to event handler or by disabling the button when the action is not possible.
+// After fixing the crash, add a “Previous” button that shows the previous sculpture. It shouldn’t crash on the first sculpture.
+
+// import { useState } from "react";
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   const [index, setIndex] = useState(0);
+//   const [showMore, setShowMore] = useState(false);
+
+//   let hasPrev = index > 0;
+//   let hasNext = index < sculptureList.length - 1;
+
+//   function handlePreClick(){
+//     if(hasPrev){
+//       setIndex(index - 1)
+//     }
+//   }
+
+//   function handleNextClick(){
+//     if (hasNext){
+//       setIndex(index + 1);
+//     }
+//   }
+
+//   function handleMoreClick(){
+//     setShowMore(!showMore)
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button 
+//         onClick={handlePreClick}
+//         disabled={!hasPrev}
+//       >
+//         Previous
+//       </button>
+//       <button 
+//         onClick={handleNextClick}
+//         disabled={!hasNext}
+//       >
+//         Next
+//       </button>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} of {sculptureList.length})
+//       </h3>
+//       <button onClick={handleMoreClick}>
+//         {showMore ? 'Hide' : 'Show'} details
+//       </button>
+//       {showMore && <p>{sculpture.description}</p>}
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//     </>
+//   );
+// }
+
+// Trying to solve exercise one the more
+
+// import { useState } from "react";
+// import { sculptureList } from "./data";
+
+// export default function App(){
+//   const [index, setIndex] = useState(0);
+//   const [showMore, setShowMore] = useState(false);
+
+//   let hasPrev = index > 0;
+//   let hasNext = index < sculptureList.length - 1;
+
+//   function handlePrevClick(){
+//     if(hasPrev){
+//       setIndex(index - 1);
+//     }
+//   }
+  
+//   function handleNextClick(){
+//     if(hasNext){
+//       setIndex(index + 1);
+//     }
+//   }
+
+//   function handleMoreClick(){
+//     setShowMore(!showMore)
+//   }
+
+//   let sculpture = sculptureList[index];
+
+//   return(
+//     <>
+//       <button 
+//         onClick={handlePrevClick}
+//         disabled={!hasPrev}
+//       >
+//         Previous
+//       </button>
+//       <button 
+//         onClick={handleNextClick}
+//         disabled={!hasNext}
+//       >
+//         Next
+//       </button>
+//       <h2>
+//         <i>{sculpture.name}</i>
+//         by {sculpture.artist}
+//       </h2>
+//       <h3>
+//         ({index + 1} of {sculptureList.length})
+//       </h3>
+//       <button onClick={handleMoreClick}>
+//         {showMore ? 'Hide' : 'Show'} details
+//       </button>
+//       {showMore && <p>{sculpture.description}</p>}
+//       <img 
+//         src={sculpture.url}
+//         alt={sculpture.alt}
+//       />
+//     </>
+//   )
+// }
+
+
+//Exercise two: When you type into the input fields, nothing appears. It’s like the input values are “stuck” with empty strings. The value of the first <input> is set to always match the firstName variable, and the value for the second <input> is set to always match the lastName variable. This is correct. Both inputs have onChange event handlers, which try to update the variables based on the latest user input (e.target.value). However, the variables don’t seem to “remember” their values between re-renders. Fix this by using state variables instead.
+// export default function Form() {
+//   let firstName = '';
+//   let lastName = '';
+
+//   function handleFirstNameChange(e) {
+//     firstName = e.target.value;
+//   }
+
+//   function handleLastNameChange(e) {
+//     lastName = e.target.value;
+//   }
+
+//   function handleReset() {
+//     firstName = '';
+//     lastName = '';
+//   }
+
+//   return (
+//     <form onSubmit={e => e.preventDefault()}>
+//       <input
+//         placeholder="First name"
+//         value={firstName}
+//         onChange={handleFirstNameChange}
+//       />
+//       <input
+//         placeholder="Last name"
+//         value={lastName}
+//         onChange={handleLastNameChange}
+//       />
+//       <h1>Hi, {firstName} {lastName}</h1>
+//       <button onClick={handleReset}>Reset</button>
+//     </form>
+//   );
+// }
+
+// Understanding the question
+
+// export default function App(){
+//   let firstName = '';
+//   let lastName = '';
+
+//   function handleFirstNameChange(e){
+//     firstName = e.target.value;
+//   }
+
+//   function handleLastNameChange(e){
+//     lastName = e.target.value;
+//   }
+
+//   function handleReset(){
+//     firstName = '';
+//     lastName = '';
+//   }
+
+//   return(
+//     <form onSubmit={ e => e.preventDefault()}>
+//       <input 
+//         placeholder="First Name"
+//         onChange={handleFirstNameChange}
+//         value={firstName}
+//       /> 
+//       <input 
+//         placeholder="Last Name"
+//         onChange={handleLastNameChange}
+//         value={lastName}
+//       /> 
+//       <h1>Hi, {firstName} {lastName}</h1>
+//       <button onClick={handleReset}>Reset</button>
+//     </form>
+//   );
+// }
+
+// Understanding the excercise
+
+// export default function App(){
+//   let firstName = '';
+//   let lastName = '';
+
+//   function handleFirstNameChange(e){
+//     firstName = e.target.value;
+//   }
+
+//   function handleLastNameChange(e){
+//     lastName = e.target.value;
+//   }
+
+//   function handleReset(){
+//     firstName = '';
+//     lastName = '';
+//   }
+
+//   return(
+//     <form onSubmit={e => e.preventDefault}>
+//       <input 
+//         placeholder="First Name"
+//         onChange={handleFirstNameChange}
+//         value={firstName}
+//       />
+
+//       <input 
+//         placeholder="Last Name"
+//         onChange={handleLastNameChange}
+//         value={lastName}
+//       />
+
+//       <h1>Hi, am {firstName} {lastName} just trying to learn tons of things </h1>
+//       <button onClick={handleReset}>Reset</button>
+//     </form>
+//   );
+// }
+
+// Solution to the exercise
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [firstName, setFirstName] = useState('');
+//   const [lastName, setLastName] = useState('');
+
+//   function handleFirstNameChange(e){
+//     setFirstName(e.target.value);
+//   }
+
+//   function handleLastNameChange(e){
+//     setLastName(e.target.value);
+//   }
+
+//   function handleReset(){
+//     setFirstName('');
+//     setLastName('');
+//   }
+
+//   return(
+//     <form onSubmit={e => e.preventDefault}>
+//       <input 
+//         placeholder="First Name"
+//         value={firstName}
+//         onChange={handleFirstNameChange}
+//       />
+
+//       <input 
+//         placeholder="Last Name"
+//         value={lastName}
+//         onChange={handleLastNameChange}
+//       />
+
+//       <h1>Hi, {firstName} {lastName}</h1>
+//       <button onClick={handleReset}>Reset</button>
+//     </form>
+//   );
+// }
+
+// Mastering the solution
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [firstName, setFirstName] = useState('');
+//   const [lastName, setLastName] = useState('');
+
+//   function handleFirstNameChange(e){
+//     setFirstName(e.target.value);
+//   }
+
+//   function handleLastNameChange(e){
+//     setLastName(e.target.value);
+//   }
+
+//   function handleReset(){
+//     setFirstName('');
+//     setLastName('');
+//   }
+
+//   return(
+//     <form onSubmit={e => e.preventDefault}>
+//       <input 
+//         placeholder="First Name"
+//         onChange={handleFirstNameChange}
+//         value={firstName}
+//       />
+
+//       <input 
+//         placeholder="Last Name"
+//         onChange={handleLastNameChange}
+//         value={lastName}
+//       />
+
+//       <h1>Hi, am {firstName} {lastName} by Name. I love you!</h1>
+//       <button onClick={handleReset}> Click to Reset</button>
+//     </form>
+//   );
+// }
+
+// Exercise three: Here is a small form that is supposed to let the user leave some feedback. When the feedback is submitted, it’s supposed to display a thank-you message. However, it crashes with an error message saying “Rendered fewer hooks than expected”. Can you spot the mistake and fix it?
+
 import { useState } from "react";
-import { sculptureList } from "./data";
 
 export default function App(){
-  const [index, setIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
-  function handleClick(){
-    setIndex(index + 1);
+  if(isSent){
+    return <h1>Thank You</h1>
+  }else{
+    const [message, setMessage] = useState('');
+    return(
+      <form onSubmit={e => {
+        e.preventDefault();
+        alert(`Sending: "${message}"`);
+        setIsSent(true);
+      }}>
+        <textarea 
+            placeholder="Message"
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+        />
+        <br />
+        <button type="submit">send</button>
+      </form>
+    );
   }
-
-  function handleMoreClick(){
-    setShowMore(!showMore);
-  }
-
-  let sculpture = sculptureList[index];
-
-  return(
-    <>
-      <button onClick={handleClick}>
-        Next
-      </button>
-      <h2>
-        <i>{sculpture.name}</i>
-        by {sculpture.artist}
-      </h2>
-      <h3>
-        ({index + 1} 0f {sculptureList.length})
-      </h3>
-      <button onClick={handleMoreClick}>
-        {showMore ? 'Hide' : 'Show'} details
-      </button>
-      {showMore && <p>{sculpture.description}</p>}
-      <img 
-        src={sculpture.url}
-        alt={sculpture.alt}
-      />
-    </>
-  );
 }
