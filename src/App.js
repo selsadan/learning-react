@@ -2455,8 +2455,188 @@
 
 // React Render and Commit
 
-import Image from "./Image";
-import { createRoot } from 'react-dom/clients';
+// import Image from "./Image";
+// import { createRoot } from 'react-dom/clients';
 
-const root = createRoot(document.getElementById('root'))
-root.render(<Image />);
+// const root = createRoot(document.getElementById('root'))
+// root.render(<Image />); 
+
+// export default function App(){
+//   return(
+//     <h1>We are fully dropped in Love!</h1>
+//   );
+// }
+
+
+// React state as a snapshot
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [isSent, setIsSent] = useState(false);
+//   const [message, setMessage] = useState('Hi!');
+
+//   if(isSent ){
+//     return(
+//       <>
+//         <h1> Your message is on the way!</h1>
+//       </>
+//     );
+//   }
+
+//   return(
+//     <form onSubmit={(e) => {
+//       e.preventDefault();
+//       setIsSent(true);
+//       sendMessage(message);
+
+//     }}>
+
+//     <textarea 
+//       placeholder="Message"
+//       value={message}
+//       onSubmit={e => setMessage(e.target.value)}
+//     />  
+    
+//     <button type="submit">Send</button>
+//     </form>
+//   );
+// }
+
+// function sendMessage(message){
+//   // ...
+// }
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [isSent, setIsSent] = useState(false);
+//   const [message, setMessage] = useState('Hi');
+
+//   if(isSent){
+//     return<h1>Your message it's on the way!</h1>
+//   }
+
+//   return(
+//     <form onSubmit={(e) => {
+//       e.preventDefault();
+//       setIsSent(true);
+//       sendMessage(message);
+//     }}>
+//       <textarea 
+//         placeholder="Message"
+//         value={message}
+//         onChange={e => setMessage(e.target.value)}
+//       />
+//       <button type="submit">Send</button>
+//     </form>
+//   );
+// }
+
+// function sendMessage(message){
+//   // ...
+// }
+
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [number, setNumber] = useState(0);
+
+//   return(
+//     <>
+//       <h1>{number}</h1>
+//       <button onClick={() => {
+//         setNumber(number + 1);
+//         setNumber(number + 1);
+//         setNumber(number + 1);
+//       }}>
+//         +3
+//       </button>
+//     </>
+//   );
+// }
+
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [number, setNumber] = useState(0);
+
+//   return(
+//     <>
+//       <h1>{number}</h1>
+//       <button onClick={() => {
+//         setNumber(number + 5);
+//         alert(number);
+//       }}>+5</button>
+//     </>
+//   );
+// }
+
+// React State in a snapshot with timeout set
+
+// import { useState } from "react";
+
+// export default function App(){
+//   const [number, setNumber] = useState(0);
+
+//   return(
+//     <>
+//       <h1>{number}</h1>
+//       <button onClick={() => {
+//         setNumber(number + 5);
+//         setTimeout(() => {
+//           alert(number);
+//         },300);
+//       }}>+5</button>
+//     </>
+//   );
+// }
+
+// import { useState } from "react";
+
+// export default function Form(){
+//   const [isSent, setIsSent] = useState(false);
+//   const [message, setMessage] = useState('Hi');
+
+//   if(isSent){
+//     return(<h1>You are sending a message now!</h1>);
+//   }
+
+//   return(
+//     <form onSubmit={(e) => {
+//       e.preventDefault();
+//       setIsSent(true);
+//       sendMessage(message);
+//     }}>
+//       <textarea 
+//         placeholder="Messsage"
+//         onChange={e => setMessage(e.target.value)}
+//         value={message}
+//       />
+//       <button type="submit">Send</button>
+//     </form>
+//   );
+// }
+
+// function sendMessage(){
+//   // ...
+// }
+
+import { useState } from "react";
+
+export default function Form(){
+  const [number, setNumber] = useState(0);
+
+  return(
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 1);
+        setNumber(number + 1);
+        setNumber(number + 1);
+      }}>+3</button>
+    </>
+  );
+}
