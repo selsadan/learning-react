@@ -2697,13 +2697,48 @@
 
 // Working on React state over time
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [to, setTo] = useState('Alice');
+//     const [message, setMessage] = useState('Hello');
+
+//     function handleSubmit(e){
+//         e.preventDefault();
+//         setTimeout(() => {
+//         alert(`You said ${message} to ${to}`);
+//         }, 5000);
+//     }
+
+//     return(
+//         <form onSubmit={handleSubmit}>
+//             <label>
+//                 To:{' '}
+//                 <select
+//                     value={to}
+//                     onChange={e => setTo(e.target.value)}>
+//                     <option value="Alice">Alice</option>
+//                     <option value="Bob">Bob</option>
+//                 </select>
+//             </label>
+
+//             <textarea
+//                 placeholder="Message"
+//                 onChange={e => setMessage(e.target.value)}
+//                 value={message}
+//             />
+//             <button type="submit">Send</button>
+//         </form>
+//     );
+// }
+
 import { useState } from "react";
 
 export default function App(){
     const [to, setTo] = useState('Alice');
-    const [message, setMessage] = useState('Hi');
+    const [message, setMessage] = useState('Hello');
 
-    function handleClick(e){
+    function handleSummit(e){
         e.preventDefault();
         setTimeout(() => {
             alert(`You said ${message} to ${to}`);
@@ -2711,21 +2746,21 @@ export default function App(){
     }
 
     return(
-        <form onChange={handleClick}>
+        <form onSubmit={handleSummit}>
             <label>
-                To:{' '}
-                <select
+                To: {' '}
+                <select 
+                    onChange={e => setTo(e.target.value)}
                     value={to}
-                    onChange={e => setTo(e.target.value)}>
-                    <option value="Alice">Alice</option>
-                    <option value="Bod">Bod</option>
+                >
+                    <option valut="Alice">Alice</option>
+                    <option valut="Bob">Bob</option>
                 </select>
             </label>
-
-            <textarea
+            <textarea 
                 placeholder="Message"
-                onChange={e => setMessage(e.target.value)}
                 value={message}
+                onChange={e => setMessage(e.target.value)}
             />
             <button type="submit">Send</button>
         </form>
