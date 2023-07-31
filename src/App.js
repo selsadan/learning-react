@@ -2660,6 +2660,22 @@
 // }
 
 // React State over time
+// import { useState } from "react";
+
+// export default function Counter(){
+//     const [number, setNumber] = useState(0);
+
+//     return(
+//         <>
+//             <h1>{number}</h1>
+//             <button onClick={() => {
+//                 setNumber(number + 5);
+//                 alert(number);
+//             }}>+5</button>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
 export default function Counter(){
@@ -2668,9 +2684,11 @@ export default function Counter(){
     return(
         <>
             <h1>{number}</h1>
-            <button onClick={() => {
+            <button  onClick={() => {
                 setNumber(number + 5);
-                alert(number);
+                setTimeout(() => {
+                    alert(number)
+                }, 3000);
             }}>+5</button>
         </>
     );
