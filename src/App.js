@@ -2676,20 +2676,58 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// export default function Counter(){
+//     const [number, setNumber] = useState(0);
+
+//     return(
+//         <>
+//             <h1>{number}</h1>
+//             <button  onClick={() => {
+//                 setNumber(number + 5);
+//                 setTimeout(() => {
+//                     alert(number)
+//                 }, 3000);
+//             }}>+5</button>
+//         </>
+//     );
+// }
+
+
+// Working on React state over time
+
 import { useState } from "react";
 
-export default function Counter(){
-    const [number, setNumber] = useState(0);
+export default function App(){
+    const [to, setTo] = useState('Alice');
+    const [message, setMessage] = useState('Hi');
+
+    function handleClick(e){
+        e.preventDefault();
+        setTimeout(() => {
+            alert(`You said ${message} to ${to}`);
+        }, 5000);
+    }
 
     return(
-        <>
-            <h1>{number}</h1>
-            <button  onClick={() => {
-                setNumber(number + 5);
-                setTimeout(() => {
-                    alert(number)
-                }, 3000);
-            }}>+5</button>
-        </>
+        <form onChange={handleClick}>
+            <label>
+                To:{' '}
+                <select
+                    value={to}
+                    onChange={e => setTo(e.target.value)}>
+                    <option value="Alice">Alice</option>
+                    <option value="Bod">Bod</option>
+                </select>
+            </label>
+
+            <textarea
+                placeholder="Message"
+                onChange={e => setMessage(e.target.value)}
+                value={message}
+            />
+            <button type="submit">Send</button>
+        </form>
     );
 }
