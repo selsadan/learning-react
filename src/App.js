@@ -2732,37 +2732,87 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [to, setTo] = useState('Alice');
+//     const [message, setMessage] = useState('Hello');
+
+//     function handleSummit(e){
+//         e.preventDefault();
+//         setTimeout(() => {
+//             alert(`You said ${message} to ${to}`);
+//         }, 5000);
+//     }
+
+//     return(
+//         <form onSubmit={handleSummit}>
+//             <label>
+//                 To: {' '}
+//                 <select 
+//                     onChange={e => setTo(e.target.value)}
+//                     value={to}
+//                 >
+//                     <option valut="Alice">Alice</option>
+//                     <option valut="Bob">Bob</option>
+//                 </select>
+//             </label>
+//             <textarea 
+//                 placeholder="Message"
+//                 value={message}
+//                 onChange={e => setMessage(e.target.value)}
+//             />
+//             <button type="submit">Send</button>
+//         </form>
+//     );
+// }
+
+// Exercise on Traffic Light
+
+// import { useState } from "react";
+
+// export default function TrafficLight(){
+//     const [walk, setWalk] = useState(false);
+
+//     function handleClick(){
+//         setWalk(!walk);
+//     }
+
+//     return(
+//         <>
+//             <button onClick={handleClick}>
+//                 Change to {walk ? 'Stop' : 'Walk'}
+//             </button>
+//             <h1 style={{
+//                 color: walk ? 'darkgreen' : 'darkred'
+//             }}>
+//                 {walk ? 'walk' : 'Stop'}
+//             </h1>
+//         </>
+//     );
+// }
+
+
 import { useState } from "react";
 
-export default function App(){
-    const [to, setTo] = useState('Alice');
-    const [message, setMessage] = useState('Hello');
+export default function TrafficLight(){
+    const [walk, setWalk] = useState(false);
 
-    function handleSummit(e){
-        e.preventDefault();
-        setTimeout(() => {
-            alert(`You said ${message} to ${to}`);
-        }, 5000);
+    function handleClick(){
+        setWalk(!walk)
+        alert(walk ? 'Stop is next' : 'Walk is next')
     }
 
     return(
-        <form onSubmit={handleSummit}>
-            <label>
-                To: {' '}
-                <select 
-                    onChange={e => setTo(e.target.value)}
-                    value={to}
-                >
-                    <option valut="Alice">Alice</option>
-                    <option valut="Bob">Bob</option>
-                </select>
-            </label>
-            <textarea 
-                placeholder="Message"
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-            />
-            <button type="submit">Send</button>
-        </form>
+        <>
+            <button onClick={handleClick}>
+                Change to {walk ? 'Stop' : 'Walk'}
+            </button>
+            <h1 style={{
+                color: walk ? 'darkgreen' : 'darkred'
+            }}>
+                {walk ? 'walk' : 'stop'}
+            </h1>
+        </>
     );
 }
