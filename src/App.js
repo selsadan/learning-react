@@ -2793,26 +2793,58 @@
 // }
 
 
+// import { useState } from "react";
+
+// export default function TrafficLight(){
+//     const [walk, setWalk] = useState(false);
+
+//     function handleClick(){
+//         setWalk(!walk)
+//         alert(walk ? 'Stop is next' : 'Walk is next')
+//     }
+
+//     return(
+//         <>
+//             <button onClick={handleClick}>
+//                 Change to {walk ? 'Stop' : 'Walk'}
+//             </button>
+//             <h1 style={{
+//                 color: walk ? 'darkgreen' : 'darkred'
+//             }}>
+//                 {walk ? 'walk' : 'stop'}
+//             </h1>
+//         </>
+//     );
+// }
+
+// Re-learning React State as Snapshot
+
 import { useState } from "react";
 
-export default function TrafficLight(){
-    const [walk, setWalk] = useState(false);
+export default function App(){
+    const [isSent, setIsSent] = useState(false);
+    const [message, setMessage] = useState('Hi!');
 
-    function handleClick(){
-        setWalk(!walk)
-        alert(walk ? 'Stop is next' : 'Walk is next')
+    if(isSent){
+        return<h1>Your message its on it's way!</h1>
     }
 
     return(
-        <>
-            <button onClick={handleClick}>
-                Change to {walk ? 'Stop' : 'Walk'}
-            </button>
-            <h1 style={{
-                color: walk ? 'darkgreen' : 'darkred'
-            }}>
-                {walk ? 'walk' : 'stop'}
-            </h1>
-        </>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            setIsSent(true);
+            sendMessage(message);
+        }}>
+            <textarea 
+                placeholder="Message"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+            />
+        </form>
+
     );
+    
+    function sendMessage(message){
+            // ...
+        }
 }
