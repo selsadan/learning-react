@@ -3001,19 +3001,53 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [number, setNumber] = useState(0);
+
+//     return(
+//         <>
+//             <h1>{number}</h1>
+//             <button onClick={() => {
+//                 setNumber(number + 1);
+//                 setNumber(n => n + 1);
+//                 setNumber(42);
+//             }}>Increase Number</button>
+//         </>
+//     );
+// }
+
+// Exercise on React state queueing
+
 import { useState } from "react";
 
-export default function App(){
-    const [number, setNumber] = useState(0);
+export default function ArtApp(){
+    const [pending, setPending] = useState(0);
+    const [completed, setCompleted] = useState(0);
+
+    async function handleClick(){
+        setPending(pending + 1);
+        await delay(3000);
+        setPending(pending - 1);
+        setCompleted(completed + 1);
+    }
 
     return(
         <>
-            <h1>{number}</h1>
-            <button onClick={() => {
-                setNumber(number + 1);
-                setNumber(n => n + 1);
-                setNumber(42);
-            }}>Increase Number</button>
+            <h3>
+                Pending: {pending}
+            </h3>
+            <h3>
+                complete: {pending}
+            </h3>
+            <button onClick={handleClick}>Buy</button>
         </>
     );
+}
+
+function delay (ms){
+    return new Promise(resolve => {
+        setTimeout(resolve,ms);
+    });
 }
