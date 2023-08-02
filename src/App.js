@@ -2947,6 +2947,25 @@
 
 // Queing a series of state update
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [number, setNumber] = useState(0);
+
+//     return(
+//         <>
+//             <h1>{number}</h1>
+//             <button onClick={() => {
+//                 setNumber(number + 1);
+//                 setNumber(number + 1);
+//                 setNumber(number + 1);
+//             }}>+3</button>
+//         </>
+//     );
+// }
+
+// Updating the same state multiple times before the next render
+
 import { useState } from "react";
 
 export default function App(){
@@ -2956,9 +2975,9 @@ export default function App(){
         <>
             <h1>{number}</h1>
             <button onClick={() => {
-                setNumber(number + 1);
-                setNumber(number + 1);
-                setNumber(number + 1);
+                setNumber( n => n + 1);
+                setNumber( n => n + 1);
+                setNumber( n => n + 1);
             }}>+3</button>
         </>
     );
