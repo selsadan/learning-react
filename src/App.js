@@ -2922,25 +2922,44 @@
 //     );
 // }
 
-import { useState } from "react";
-export default function TrafficLight(){
-    const [walk, setWalk] = useState(false);
+// import { useState } from "react";
+// export default function TrafficLight(){
+//     const [walk, setWalk] = useState(false);
 
-    function handleClick(){
-        setWalk(!walk)
-        alert(walk ? 'Stop is next' : 'Walk is next'    );
-    }
+//     function handleClick(){
+//         setWalk(!walk)
+//         alert(walk ? 'Stop is next' : 'Walk is next'    );
+//     }
+
+//     return(
+//         <>
+//             <button onClick={handleClick}>
+//                 Change to { walk ? 'Stop' : 'Walk'}
+//             </button>
+//             <h1 style={{
+//                 color: walk ? 'darkgreen' : 'darkred'
+//             }}>
+//                 {walk ? 'Walk' : 'Stop'}
+//             </h1>
+//         </>
+//     );
+// }
+
+// Queing a series of state update
+
+import { useState } from "react";
+
+export default function App(){
+    const [number, setNumber] = useState(0);
 
     return(
         <>
-            <button onClick={handleClick}>
-                Change to { walk ? 'Stop' : 'Walk'}
-            </button>
-            <h1 style={{
-                color: walk ? 'darkgreen' : 'darkred'
-            }}>
-                {walk ? 'Walk' : 'Stop'}
-            </h1>
+            <h1>{number}</h1>
+            <button onClick={() => {
+                setNumber(number + 1);
+                setNumber(number + 1);
+                setNumber(number + 1);
+            }}>+3</button>
         </>
     );
 }
