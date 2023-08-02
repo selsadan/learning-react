@@ -2849,6 +2849,24 @@
 //         }
 // }
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [number, setNumber] = useState(0);
+
+//     return(
+//         <>
+//             <h1>{number}</h1>
+//             <button onClick={() => {
+//                 setNumber(number + 1);
+//                 setNumber(number + 1);
+//                 setNumber(number + 1);
+//                 alert(number);
+//             }}>+5</button>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
 export default function App(){
@@ -2859,9 +2877,9 @@ export default function App(){
             <h1>{number}</h1>
             <button onClick={() => {
                 setNumber(number + 1);
-                setNumber(number + 1);
-                setNumber(number + 1);
-                alert(number);
+                setTimeout(() => {
+                    alert(number);
+                }, 3000);
             }}>+5</button>
         </>
     );
