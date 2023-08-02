@@ -2819,32 +2819,50 @@
 
 // Re-learning React State as Snapshot
 
+// import { useState } from "react";
+
+// export default function App(){
+//     const [isSent, setIsSent] = useState(false);
+//     const [message, setMessage] = useState('Hi!');
+
+//     if(isSent){
+//         return<h1>Your message its on it's way!</h1>
+//     }
+
+//     return(
+//         <form onSubmit={(e) => {
+//             e.preventDefault();
+//             setIsSent(true);
+//             sendMessage(message);
+//         }}>
+//             <textarea 
+//                 placeholder="Message"
+//                 value={message}
+//                 onChange={e => setMessage(e.target.value)}
+//             />
+//         </form>
+
+//     );
+    
+//     function sendMessage(message){
+//             // ...
+//         }
+// }
+
 import { useState } from "react";
 
 export default function App(){
-    const [isSent, setIsSent] = useState(false);
-    const [message, setMessage] = useState('Hi!');
-
-    if(isSent){
-        return<h1>Your message its on it's way!</h1>
-    }
+    const [number, setNumber] = useState(0);
 
     return(
-        <form onSubmit={(e) => {
-            e.preventDefault();
-            setIsSent(true);
-            sendMessage(message);
-        }}>
-            <textarea 
-                placeholder="Message"
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-            />
-        </form>
-
+        <>
+            <h1>{number}</h1>
+            <button onClick={() => {
+                setNumber(number + 1);
+                setNumber(number + 1);
+                setNumber(number + 1);
+                alert(number);
+            }}>+5</button>
+        </>
     );
-    
-    function sendMessage(message){
-            // ...
-        }
 }
