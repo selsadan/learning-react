@@ -3084,34 +3084,72 @@
 //     });
 // }
 
+// import { useState } from "react";
+
+// export default function MarketApp(){
+//     const [pending, setPending] = useState(0);
+//     const [completed, setCompleted] = useState(0);
+
+//     async function handleClick(){
+//         setPending(p => p + 1);
+//         await delay(3000);
+//         setPending(p => p - 1);
+//         setCompleted(c => c + 1);
+//     }
+
+//     return(
+//         <>
+//             <h3>
+//                 Pending: {pending}
+//             </h3>
+//             <h1>Let the poor breathe</h1>
+//             <h3>
+//                 Completed: {completed}
+//             </h3>
+//             <button onClick={handleClick}>Buy</button>
+//         </>
+//     );
+// }
+
+// function delay(ms){
+//     return new Promise(resolve => {
+//         setTimeout(resolve, ms);
+//     });
+// }
+
+// React -  updating State using object
+
 import { useState } from "react";
 
-export default function MarketApp(){
-    const [pending, setPending] = useState(0);
-    const [completed, setCompleted] = useState(0);
-
-    async function handleClick(){
-        setPending(p => p + 1);
-        await delay(3000);
-        setPending(p => p - 1);
-        setCompleted(c => c + 1);
-    }
+export default function MovingDt(){
+    const [position, setPosition] = useState({
+        x: 0,
+        y: 0
+    });
 
     return(
-        <>
-            <h3>
-                Pending: {pending}
-            </h3>
-            <h3>
-                Completed: {completed}
-            </h3>
-            <button onClick={handleClick}>Buy</button>
-        </>
-    );
-}
+        <div
+            onPointerMove={e => {
+                position.x = e.clientX;
+                position.y = e.clientY;
+            }}
 
-function delay(ms){
-    return new Promise(resolve => {
-        setTimeout(resolve, ms);
-    });
+            style={{
+                position: 'relative',
+                width: '100vw',
+                height: '100vh'
+            }}>
+            <div style={{
+                position: 'absoulute',
+                background: 'red',
+                borderRadius: '50%',
+                transform: `translate(${position.x}px, ${position.y}px)`,
+                left: -10,
+                top: -10,
+                width: 20,
+                height: 20,
+            }}/>
+        <div />
+        </div>
+    );
 }
