@@ -3190,38 +3190,93 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// export default function MovingDot(){
+//     const [position, setPosition] = useState({
+//         x: 0,
+//         y: 0,
+//     });
+
+//     return(
+//         <div onPointerMove={e => {
+//             setPosition({
+//                 x: e.clientX,
+//                 y: e.clientY,
+//             });
+//         }}
+//         style={{
+//             position: 'relative',
+//             width: '100vw',
+//             height: '100vh',
+//         }}>
+//             <div 
+//                 style={{
+//                     position: 'absolute',
+//                     backgroundColor: 'red',
+//                     borderRadius: '50%',
+//                     transform: `translate(${position.x}px, ${position.y}px)`,
+//                     left: -10,
+//                     top: -10,
+//                     width: 20,
+//                     height: 20,
+//                 }}
+//             />
+//         </div>
+//     );
+// }
+
 import { useState } from "react";
 
-export default function MovingDot(){
-    const [position, setPosition] = useState({
-        x: 0,
-        y: 0,
+export default function Form(){
+    const [person, setPerson] = useState({
+        firstName: 'Dan',
+        lastName: 'Selsa',
+        email: 'selsadan@learning.org',
     });
 
+    function handleFirstNameChange(e){
+        person.firstName =  e.target.value;
+    }
+
+    function handleLastNameChange(e){
+        person.lastName =  e.target.value;
+    }
+
+    function handleEmailChange(e){
+        person.email =  e.target.value;
+    }
+
     return(
-        <div onPointerMove={e => {
-            setPosition({
-                x: e.clientX,
-                y: e.clientY,
-            });
-        }}
-        style={{
-            position: 'relative',
-            width: '100vw',
-            height: '100vh',
-        }}>
-            <div 
-                style={{
-                    position: 'absolute',
-                    backgroundColor: 'red',
-                    borderRadius: '50%',
-                    transform: `translate(${position.x}px, ${position.y}px)`,
-                    left: -10,
-                    top: -10,
-                    width: 20,
-                    height: 20,
-                }}
-            />
-        </div>
+        <>
+            <label>
+                First Name:
+                <input 
+                    onChange={handleFirstNameChange}
+                    value={person.firstName}
+                />
+            </label>
+
+            <label>
+                Last Name:
+                <input 
+                    onChange={handleLastNameChange}
+                    value={person.lastName}
+                />
+            </label>
+
+            <label>
+                Email:
+                <input 
+                    onChange={handleEmailChange}
+                    value={person.email}
+                />
+            </label>
+            <p>
+                {person.firstName}{' '}
+                {person.lastName}{' '}
+                ({person.email})
+            </p>
+        </>
     );
 }
