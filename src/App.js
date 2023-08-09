@@ -3119,37 +3119,73 @@
 
 // React -  updating State using object
 
+// import { useState } from "react";
+
+// export default function MovingDt(){
+//     const [position, setPosition] = useState({
+//         x: 0,
+//         y: 0
+//     });
+
+//     return(
+//         <div
+//             onPointerMove={e => {
+//                    position.x = e.clientX;
+//                 position.y = e.clientY;
+//             }}
+
+//             style={{
+//                 position: 'relative',
+//                 width: '100vw',
+//                 height: '100vh'
+//             }}>
+//             <div style={{
+//                 position: 'absoulute',
+//                 background: 'red',
+//                 borderRadius: '50%',
+//                 transform: `translate(${position.x}px, ${position.y}px)`,
+//                 left: -10,
+//                 top: -10,
+//                 width: 20,
+//                 height: 20,
+//             }}/>
+//         <div />
+//         </div>
+//     );
+// }
+
+
 import { useState } from "react";
 
-export default function MovingDt(){
+export default function MovingDot(){
     const [position, setPosition] = useState({
         x: 0,
-        y: 0
+        y: 0,
     });
 
-    return(
-        <div
-            onPointerMove={e => {
-                position.x = e.clientX;
-                position.y = e.clientY;
-            }}
+    return(  
+        <div onPointerMove={e => {
+            position.x = e.clientX
+            position.y = e.clientY
+        }}
+        
+        style={{
+            postion: 'relative',
+            height: '100vh',
+            width: '100vw'
+        }}
+        >
 
-            style={{
-                position: 'relative',
-                width: '100vw',
-                height: '100vh'
-            }}>
-            <div style={{
-                position: 'absoulute',
-                background: 'red',
-                borderRadius: '50%',
-                transform: `translate(${position.x}px, ${position.y}px)`,
-                left: -10,
-                top: -10,
-                width: 20,
-                height: 20,
-            }}/>
-        <div />
+        <div style={{
+            postion: 'absolute',
+            backgroundColor: 'red',
+            borderRadius: '50%',
+            transform: `translate(${position.x}px, ${position.y}px)`,
+            left: -10,
+            top: -10,
+            width: 20,
+            height: 20,
+        }}/>        
         </div>
     );
 }
