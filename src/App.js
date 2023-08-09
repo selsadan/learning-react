@@ -3226,25 +3226,80 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// export default function Form(){
+//     const [person, setPerson] = useState({
+//         firstName: 'Dan',
+//         lastName: 'Selsa',
+//         email: 'selsadan@learning.org',
+//     });
+
+//     function handleFirstNameChange(e){
+//         person.firstName =  e.target.value;
+//     }
+
+//     function handleLastNameChange(e){
+//         person.lastName =  e.target.value;
+//     }
+
+//     function handleEmailChange(e){
+//         person.email =  e.target.value;
+//     }
+
+//     return(
+//         <>
+//             <label>
+//                 First Name:
+//                 <input 
+//                     onChange={handleFirstNameChange}
+//                     value={person.firstName}
+//                 />
+//             </label>
+
+//             <label>
+//                 Last Name:
+//                 <input 
+//                     onChange={handleLastNameChange}
+//                     value={person.lastName}
+//                 />
+//             </label>
+
+//             <label>
+//                 Email:
+//                 <input 
+//                     onChange={handleEmailChange}
+//                     value={person.email}
+//                 />
+//             </label>
+//             <p>
+//                 {person.firstName}{' '}
+//                 {person.lastName}{' '}
+//                 ({person.email})
+//             </p>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
 export default function Form(){
     const [person, setPerson] = useState({
-        firstName: 'Dan',
-        lastName: 'Selsa',
-        email: 'selsadan@learning.org',
+        firstName: 'Selsa',
+        lastName: 'Daniel',
+        email: 'SelsaDaniel@learning.org',
     });
 
     function handleFirstNameChange(e){
-        person.firstName =  e.target.value;
+        person.firstName = e.target.value
     }
 
     function handleLastNameChange(e){
-        person.lastName =  e.target.value;
+        person.lastName = e.target.value
     }
 
     function handleEmailChange(e){
-        person.email =  e.target.value;
+        person.firstName = e.target.value
     }
 
     return(
@@ -3256,12 +3311,12 @@ export default function Form(){
                     value={person.firstName}
                 />
             </label>
-
+            
             <label>
                 Last Name:
                 <input 
                     onChange={handleLastNameChange}
-                    value={person.lastName}
+                    value={person.firstName}
                 />
             </label>
 
@@ -3273,7 +3328,7 @@ export default function Form(){
                 />
             </label>
             <p>
-                {person.firstName}{' '}
+                {person.firstName}{''}
                 {person.lastName}{' '}
                 ({person.email})
             </p>
