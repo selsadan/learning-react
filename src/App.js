@@ -3411,25 +3411,90 @@
 
 // copying object with the spread syntax
 
+// import { useState } from "react";
+
+// export default function Form(){
+//     const [person, setPerson] = useState({
+//         firstName: 'Daniel',
+//         lastName: 'Datuhung',
+//         email: 'DD@working.org'
+//     });
+
+//     function handleFirstNameChange(e){
+//         person.firstName = e.target.value;
+//     }
+
+//     function handleLastNameChange(e){
+//         person.lastName = e.target.value;
+//     }
+
+//     function handleEmailChange(e){
+//         person.email = e.target.value;
+//     }
+
+//     return(
+//         <>
+//             <label>
+//                 First Name:
+//                 <input 
+//                     value={person.firstName}
+//                     onChange={handleFirstNameChange}
+//                 />
+//             </label>
+//             <label>
+//                 Last Name:
+//                 <input 
+//                     value={person.lastName}
+//                     onChange={handleLastNameChange}
+//                 />
+//             </label>
+//             <label>
+//                 Email:
+//                 <input 
+//                     value={person.email}
+//                     onChange={handleEmailChange}
+//                 />
+//             </label>
+
+//             <p>
+//                 {person.firstName}
+//                 {person.lastName}
+//                 ({person.email})
+//             </p>
+//         </>
+//     );
+// }
+
+// Using spread syntax in setState function
+
 import { useState } from "react";
 
 export default function Form(){
-    const [person, setPerson] = useState({
+    const [person, setPerson] = useState ({
         firstName: 'Daniel',
         lastName: 'Datuhung',
-        email: 'DD@working.org'
+        email: 'DD@selsasoftware',
     });
 
     function handleFirstNameChange(e){
-        person.firstName = e.target.value;
+        setPerson({
+            ...person,
+            firstName: e.target.value
+        });
     }
 
     function handleLastNameChange(e){
-        person.lastName = e.target.value;
+        setPerson({
+            ...person,
+            lastName: e.target.value
+        });
     }
 
     function handleEmailChange(e){
-        person.email = e.target.value;
+        setPerson({
+            ...person,
+            email: e.target.value
+        });
     }
 
     return(
@@ -3441,6 +3506,7 @@ export default function Form(){
                     onChange={handleFirstNameChange}
                 />
             </label>
+
             <label>
                 Last Name:
                 <input 
@@ -3457,9 +3523,9 @@ export default function Form(){
             </label>
 
             <p>
-                {person.firstName}
-                {person.lastName}
-                ({person.email})
+                {person.firstName} {' '}
+                {person.lastName} {' '}
+                {person.email} 
             </p>
         </>
     );
