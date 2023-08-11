@@ -3467,66 +3467,122 @@
 
 // Using spread syntax in setState function
 
+// import { useState } from "react";
+
+// export default function Form(){
+//     const [person, setPerson] = useState ({
+//         firstName: 'Daniel',
+//         lastName: 'Datuhung',
+//         email: 'DD@selsasoftware',
+//     });
+
+//     function handleFirstNameChange(e){
+//         setPerson({
+//             ...person,
+//             firstName: e.target.value
+//         });
+//     }
+
+//     function handleLastNameChange(e){
+//         setPerson({
+//             ...person,
+//             lastName: e.target.value
+//         });
+//     }
+
+//     function handleEmailChange(e){
+//         setPerson({
+//             ...person,
+//             email: e.target.value
+//         });
+//     }
+
+//     return(
+//         <>
+//             <label>
+//                 First Name:
+//                 <input 
+//                     value={person.firstName}
+//                     onChange={handleFirstNameChange}
+//                 />
+//             </label>
+
+//             <label>
+//                 Last Name:
+//                 <input 
+//                     value={person.lastName}
+//                     onChange={handleLastNameChange}
+//                 />
+//             </label>
+//             <label>
+//                 Email:
+//                 <input 
+//                     value={person.email}
+//                     onChange={handleEmailChange}
+//                 />
+//             </label>
+
+//             <p>
+//                 {person.firstName} {' '}
+//                 {person.lastName} {' '}
+//                 {person.email} 
+//             </p>
+//         </>
+//     );
+// }
+
+
+// Using single event handler to handle multiple field
+
 import { useState } from "react";
 
 export default function Form(){
-    const [person, setPerson] = useState ({
-        firstName: 'Daniel',
-        lastName: 'Datuhung',
-        email: 'DD@selsasoftware',
+    const [person, setPerson] = useState({
+        firstName: 'Selsa',
+        lastName: 'Daniel',
+        email: 'selsadan@selsasoftware.org',
     });
 
-    function handleFirstNameChange(e){
+    function handleChange(e) {
         setPerson({
             ...person,
-            firstName: e.target.value
+            [e.target.name] : e.target.value
         });
+
+        return(
+            <>
+                <label>
+                    First Name:
+                    <input 
+                        name="firstName"
+                        value={person.firstName}
+                        onChange={handleChange}
+                    />
+                </label>
+                
+                <label>
+                    Last Name:
+                    <input 
+                        name="email"
+                        value={person.lastName}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Email:
+                    <input 
+                        name="email"
+                        value={person.email}
+                        onChange={handleChange}
+                    />
+                </label>
+
+                <p>
+                    {person.firstName} {' '}
+                    {person.lastName} {' '}
+                    {person.email}
+                </p>
+            </>
+        );
     }
-
-    function handleLastNameChange(e){
-        setPerson({
-            ...person,
-            lastName: e.target.value
-        });
-    }
-
-    function handleEmailChange(e){
-        setPerson({
-            ...person,
-            email: e.target.value
-        });
-    }
-
-    return(
-        <>
-            <label>
-                First Name:
-                <input 
-                    value={person.firstName}
-                    onChange={handleFirstNameChange}
-                />
-            </label>
-
-            <label>
-                Last Name:
-                <input 
-                    value={person.lastName}
-                    onChange={handleLastNameChange}
-                />
-            </label>
-            <label>
-                Email:
-                <input 
-                    value={person.email}
-                    onChange={handleEmailChange}
-                />
-            </label>
-
-            <p>
-                {person.firstName} {' '}
-                {person.lastName} {' '}
-                {person.email} 
-            </p>
-        </>
-    );
 }
