@@ -3534,55 +3534,112 @@
 
 // Using single event handler to handle multiple field
 
+// import { useState } from "react";
+
+// export default function Form(){
+//     const [person, setPerson] = useState({
+//         firstName: 'Selsa',
+//         lastName: 'Daniel',
+//         email: 'selsadan@selsasoftware.org',
+//     });
+
+//     function handleChange(e) {
+//         setPerson({
+//             ...person,
+//             [e.target.name] : e.target.value
+//         });
+
+//         return(
+//             <>
+//                 <label>
+//                     First Name:
+//                     <input 
+//                         name="firstName"
+//                         value={person.firstName}
+//                         onChange={handleChange}
+//                     />
+//                 </label>
+                
+//                 <label>
+//                     Last Name:
+//                     <input 
+//                         name="email"
+//                         value={person.lastName}
+//                         onChange={handleChange}
+//                     />
+//                 </label>
+
+//                 <label>
+//                     Email:
+//                     <input 
+//                         name="email"
+//                         value={person.email}
+//                         onChange={handleChange}
+//                     />
+//                 </label>
+
+//                 <p>
+//                     {person.firstName} {' '}
+//                     {person.lastName} {' '}
+//                     {person.email}
+//                 </p>
+//             </>
+//         );
+//     }
+// }
+
+// Function not working from the previous example : Retrying
+
 import { useState } from "react";
 
 export default function Form(){
     const [person, setPerson] = useState({
-        firstName: 'Selsa',
-        lastName: 'Daniel',
-        email: 'selsadan@selsasoftware.org',
+        firstName: 'Daniel',
+        lastName: 'Datuhung',
+        email: 'Dan@dan.org',
     });
 
-    function handleChange(e) {
+    function handleChange(e){
         setPerson({
             ...person,
             [e.target.name] : e.target.value
         });
-
-        return(
-            <>
-                <label>
-                    First Name:
-                    <input 
-                        name="firstName"
-                        value={person.firstName}
-                        onChange={handleChange}
-                    />
-                </label>
-                
-                <label>
-                    Last Name:
-                    <input 
-                        name="email"
-                        value={person.lastName}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Email:
-                    <input 
-                        name="email"
-                        value={person.email}
-                        onChange={handleChange}
-                    />
-                </label>
-
-                <p>
-                    {person.firstName} {' '}
-                    {person.lastName} {' '}
-                    {person.email}
-                </p>
-            </>
-        );
     }
+
+    return(
+        <>
+            <label>
+                First Name: 
+                <input 
+                    name="firstName"
+                    value={person.firstName}
+                    onChange={handleChange}
+                />
+            </label>
+            
+            <label>
+                Last Name: 
+                <input 
+                    name="lastName"
+                    value={person.lastName}
+                    onChange={handleChange}
+                />
+            </label>
+
+            <label>
+                Email: 
+                <input 
+                    name="Email"
+                    value={person.Email}
+                    onChange={handleChange}
+                />
+            </label>
+
+            <p>
+                {person.firstName} {' '}
+                {person.lastName} {' '}
+                ({person.email})
+            </p>
+        </>
+    );
 }
