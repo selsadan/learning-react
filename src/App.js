@@ -3590,13 +3590,70 @@
 
 // Function not working from the previous example : Retrying
 
+// import { useState } from "react";
+
+// export default function Form(){
+//     const [person, setPerson] = useState({
+//         firstName: 'Daniel',
+//         lastName: 'Datuhung',
+//         email: 'Dan@dan.org',
+//     });
+
+//     function handleChange(e){
+//         setPerson({
+//             ...person,
+//             [e.target.name] : e.target.value
+//         });
+//     }
+
+//     return(
+//         <>
+//             <label>
+//                 First Name: 
+//                 <input 
+//                     name="firstName"
+//                     value={person.firstName}
+//                     onChange={handleChange}
+//                 />
+//             </label>
+            
+//             <label>
+//                 Last Name: 
+//                 <input 
+//                     name="lastName"
+//                     value={person.lastName}
+//                     onChange={handleChange}
+//                 />
+//             </label>
+
+//             <label>
+//                 Email: 
+//                 <input 
+//                     name="Email"
+//                     value={person.Email}
+//                     onChange={handleChange}
+//                 />
+//             </label>
+
+//             <p>
+//                 {person.firstName} {' '}
+//                 {person.lastName} {' '}
+//                 ({person.email})
+//             </p>
+//         </>
+//     );
+// }
+
+
+// Retrying the-same React with object syntax
+
 import { useState } from "react";
 
 export default function Form(){
     const [person, setPerson] = useState({
         firstName: 'Daniel',
         lastName: 'Datuhung',
-        email: 'Dan@dan.org',
+        email: 'daD@gmail.com'
     });
 
     function handleChange(e){
@@ -3609,35 +3666,35 @@ export default function Form(){
     return(
         <>
             <label>
-                First Name: 
+                First Name:
                 <input 
                     name="firstName"
                     value={person.firstName}
                     onChange={handleChange}
                 />
             </label>
-            
+
             <label>
-                Last Name: 
+                Last Name:
                 <input 
                     name="lastName"
                     value={person.lastName}
                     onChange={handleChange}
                 />
             </label>
-
+            
             <label>
-                Email: 
+                Email:
                 <input 
-                    name="Email"
-                    value={person.Email}
+                    name="email"
+                    value={person.email}
                     onChange={handleChange}
                 />
             </label>
 
             <p>
-                {person.firstName} {' '}
-                {person.lastName} {' '}
+                {person.firstName}{' '}
+                {person.lastName}{' '}
                 ({person.email})
             </p>
         </>
