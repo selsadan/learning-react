@@ -9,7 +9,7 @@ export default function Box({
     const [lastCoordinates, setLastCoordinates] = useState(null);
 
     function handlePointerDown(e){
-        e.target.setPointerDown(e.pointer.Id);
+        e.target.setPointerCapture(e.pointerId);
         setLastCoordinates({
             x: e.clientX,
             y: e.clientY,
@@ -48,7 +48,6 @@ export default function Box({
                 justifyContent: 'center',
                 alignItems: 'center',
                 transform: `translate(${position.x}px, ${position.y}px)`,
-
             }}
         >{children}</div>
     );

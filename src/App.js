@@ -3978,14 +3978,13 @@ export default function App(){
         color: 'orange',
         position: initialPosition
     });
-}
 
 function handleMove(dx, dy){
     setShape({
         ...shape,
         position: {
             x: shape.position.x + dx,
-            x: shape.position.y + dy,
+            y: shape.position.y + dy,
         }
     });
 }
@@ -3998,6 +3997,7 @@ function handleColorChange(e){
 }
 
 return(
+    
     <>
         <select
             value={shape.value}
@@ -4020,3 +4020,4 @@ return(
         </Box>
     </>
 );
+}
