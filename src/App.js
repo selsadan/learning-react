@@ -3900,59 +3900,123 @@
 //     );
 // }
 
-import { useState } from 'react';
 
-export default function Scoreboard() {
-  const [player, setPlayer] = useState({
-    firstName: 'Ranjani',
-    lastName: 'Shettar',
-    score: 10,
-  });
+// Excercise on React object
 
-  function handlePlusClick() {
-    setPlayer({
-        ...player,
-        score: player.score +1
-    });;
-  }
+// import { useState } from 'react';
 
-  function handleFirstNameChange(e) {
-    setPlayer({
-      ...player,
-      firstName: e.target.value,
-    });
-  }
+// export default function Scoreboard() {
+//   const [player, setPlayer] = useState({
+//     firstName: 'Ranjani',
+//     lastName: 'Shettar',
+//     score: 10,
+//   });
 
-  function handleLastNameChange(e) {
-    setPlayer({
-        ...player,
-      lastName: e.target.value
-    });
-  }
+//   function handlePlusClick() {
+//     setPlayer({
+//         ...player,
+//         score: player.score +1
+//     });;
+//   }
 
-  return (
-    <>
-      <label>
-        Score: <b>{player.score}</b>
-        {' '}
-        <button onClick={handlePlusClick}>
-          +1
-        </button>
-      </label>
-      <label>
-        First name:
-        <input
-          value={player.firstName}
-          onChange={handleFirstNameChange}
-        />
-      </label>
-      <label>
-        Last name:
-        <input
-          value={player.lastName}
-          onChange={handleLastNameChange}
-        />
-      </label>
-    </>
-  );
+//   function handleFirstNameChange(e) {
+//     setPlayer({
+//       ...player,
+//       firstName: e.target.value,
+//     });
+//   }
+
+//   function handleLastNameChange(e) {
+//     setPlayer({
+//         ...player,
+//       lastName: e.target.value
+//     });
+//   }
+
+//   return (
+//     <>
+//       <label>
+//         Score: <b>{player.score}</b>
+//         {' '}
+//         <button onClick={handlePlusClick}>
+//           +1
+//         </button>
+//       </label>
+//       <label>
+//         First name:
+//         <input
+//           value={player.firstName}
+//           onChange={handleFirstNameChange}
+//         />
+//       </label>
+//       <label>
+//         Last name:
+//         <input
+//           value={player.lastName}
+//           onChange={handleLastNameChange}
+//         />
+//       </label>
+//     </>
+//   );
+// }
+
+
+
+//Working on React exercise
+
+import { useState } from "react";
+import Background from "./background";
+import Box from "./box";
+
+const initialPosition = {
+    x: 0,
+    y: 0,
 }
+
+export default function App(){
+    const [shape, setShape] = useState({
+        color: 'orange',
+        position: initialPosition
+    });
+}
+
+function handleMove(dx, dy){
+    setShape({
+        ...shape,
+        position: {
+            x: shape.position.x + dx,
+            x: shape.position.y + dy,
+        }
+    });
+}
+
+function handleColorChange(e){
+    setShape({
+        ...shape,
+        color: e.target.value
+    });
+}
+
+return(
+    <>
+        <select
+            value={shape.value}
+            onChange={handleColorChange}
+        >
+        <option value="orange"> Orange</option>
+        <option value="pink"> Pick</option>
+        <option value="yellow"> Yellow</option>
+        </select>
+
+        <Background 
+            position={initialPosition}
+        />
+        <Box 
+            color={shape.color}
+            position={shape.position}
+            onMove={handleMove}
+        >
+            Drag Me!
+        </Box>
+    </>
+);
