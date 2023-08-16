@@ -4056,6 +4056,37 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// let nextId = 0;
+
+// export default function App(){
+//     const [name, setName] = useState('');
+//     const [artists, setArtists] = useState([]);
+
+//     return(
+//         <>
+//             <h1>Inspiring Sculpture:</h1>
+//             <input 
+//                 value={name}
+//                 onChange={e => setName(e.target.value)}
+//             />
+//             <button
+//                 onClick={() => {
+//                     setArtists([
+//                         ...artists,
+//                         {id: nextId++, name: name }
+//                     ])
+//             }}>Add</button>
+//             <ul>
+//                 {artists.map(artist => (
+//                     <li key={artist.id}>{artist.name}</li>
+//                 ))}
+//             </ul>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
 let nextId = 0;
@@ -4066,20 +4097,19 @@ export default function App(){
 
     return(
         <>
-            <h1>Inspiring Sculpture:</h1>
+            <h1>Inspiring Sculptures:</h1>
             <input 
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
-            <button
-                onClick={() => {
-                    setArtists([
-                        ...artists,
-                        {id: nextId++, name: name }
-                    ])
+            <button onClick={() =>{
+                setArtists([
+                    ...artists,
+                    {id: nextId++, name: name}
+                ]);
             }}>Add</button>
             <ul>
-                {artists.map(artist => (
+                {artists.map(artist =>(
                     <li key={artist.id}>{artist.name}</li>
                 ))}
             </ul>
