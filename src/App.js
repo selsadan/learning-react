@@ -3964,60 +3964,94 @@
 
 //Working on React exercise
 
-import { useState } from "react";
-import Background from "./background";
-import Box from "./box";
+// import { useState } from "react";
+// import Background from "./background";
+// import Box from "./box";
 
-const initialPosition = {
-    x: 0,
-    y: 0,
-}
+// const initialPosition = {
+//     x: 0,
+//     y: 0,
+// }
+
+// export default function App(){
+//     const [shape, setShape] = useState({
+//         color: 'orange',
+//         position: initialPosition
+//     });
+
+// function handleMove(dx, dy){
+//     setShape({
+//         ...shape,
+//         position: {
+//             x: shape.position.x + dx,
+//             y: shape.position.y + dy,
+//         }
+//     });
+// }
+
+// function handleColorChange(e){
+//     setShape({
+//         ...shape,
+//         color: e.target.value
+//     });
+// }
+
+// return(
+    
+//     <>
+//         <select
+//             value={shape.value}
+//             onChange={handleColorChange}
+//         >
+//         <option value="orange"> Orange</option>
+//         <option value="pink"> Pick</option>
+//         <option value="yellow"> Yellow</option>
+//         </select>
+
+//         <Background 
+//             position={initialPosition}
+//         />
+//         <Box 
+//             color={shape.color}
+//             position={shape.position}
+//             onMove={handleMove}
+//         >
+//             Drag Me!
+//         </Box>
+//     </>
+// );
+// }
+
+// Learning React upadatinng array in state
+
+import { useState } from "react";
+
+let nextID = 0;
 
 export default function App(){
-    const [shape, setShape] = useState({
-        color: 'orange',
-        position: initialPosition
-    });
+    const [name, setName] = useState('');
+    const [artists, setArtists] = useState([]);
 
-function handleMove(dx, dy){
-    setShape({
-        ...shape,
-        position: {
-            x: shape.position.x + dx,
-            y: shape.position.y + dy,
-        }
-    });
-}
-
-function handleColorChange(e){
-    setShape({
-        ...shape,
-        color: e.target.value
-    });
-}
-
-return(
-    
-    <>
-        <select
-            value={shape.value}
-            onChange={handleColorChange}
-        >
-        <option value="orange"> Orange</option>
-        <option value="pink"> Pick</option>
-        <option value="yellow"> Yellow</option>
-        </select>
-
-        <Background 
-            position={initialPosition}
-        />
-        <Box 
-            color={shape.color}
-            position={shape.position}
-            onMove={handleMove}
-        >
-            Drag Me!
-        </Box>
-    </>
-);
+    return(
+        <>
+            <h1>Inspiring Sculptures:</h1>
+            <input 
+                value={name}
+                onChange={e => setName(e.target.value)}
+            />
+            <button
+                onClick={() => {
+                    artists.push({
+                        id: nextID++,
+                        name: name,
+                    })
+                }}
+            >Add</button>
+            <ul>
+                {artists.map(artist => (
+                    <li key={artist.id}>{artist.name}</li>
+                ))}
+            </ul>
+        </>
+    );
 }
