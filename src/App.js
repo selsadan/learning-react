@@ -4024,9 +4024,41 @@
 
 // Learning React upadatinng array in state
 
+// import { useState } from "react";
+
+// let nextId = 0;
+
+// export default function App(){
+//     const [name, setName] = useState('');
+//     const [artists, setArtists] = useState([]);
+
+//     return(
+//         <>
+//             <h1>Inspiring Sculptures:</h1>
+//             <input 
+//                 value={name}
+//                 onChange={e => setName(e.target.value)}
+//             />
+//             <button
+//                 onClick={() => {
+//                     artists.push({
+//                         id: nextId++,
+//                         name: name,
+//                     })
+//                 }}
+//             >Add</button>
+//             <ul>
+//                 {artists.map(artist => (
+//                     <li key={artist.id}>{artist.name}</li>
+//                 ))}
+//             </ul>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
-let nextID = 0;
+let nextId = 0;
 
 export default function App(){
     const [name, setName] = useState('');
@@ -4034,19 +4066,18 @@ export default function App(){
 
     return(
         <>
-            <h1>Inspiring Sculptures:</h1>
+            <h1>Inspiring Sculpture:</h1>
             <input 
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
             <button
                 onClick={() => {
-                    artists.push({
-                        id: nextID++,
-                        name: name,
-                    })
-                }}
-            >Add</button>
+                    setArtists([
+                        ...artists,
+                        {id: nextId++, name: name }
+                    ])
+            }}>Add</button>
             <ul>
                 {artists.map(artist => (
                     <li key={artist.id}>{artist.name}</li>
