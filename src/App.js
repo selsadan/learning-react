@@ -4176,30 +4176,63 @@
 //     );
 // }
 
+// import { useState } from "react";
+
+// let nextId = 0;
+
+// export default function List(){
+//     const [name, setName] = useState('');
+//     const [artist, setArtist] = useState([]);
+
+//     return(
+//         <>
+//             <h1>Inspiring Sculptors is Good!</h1>
+//             <input 
+//                 value={name}
+//                 onChange={e => setName(e.target.value)}
+//             />
+//             <button onClick={() => {
+//                 setArtist([
+//                     ...artist,
+//                     {id: nextId++, name: name}
+//                 ]);
+//             }}>Add</button>
+//             <ul>
+//                 {artist.map(artist => (
+//                     <li key={artist.id}>{artist.name}</li>
+//                 ))}
+//             </ul>
+//         </>
+//     );
+// }
+
+// Removing from an Array
+
 import { useState } from "react";
 
-let nextId = 0;
+let initialArtists = [
+    {id: 0, name: 'Selsa Daniel'},
+    {id: 0, name: 'Daniel Davou'},
+    {id: 0, name: 'Great Dan'},
+];
 
-export default function List(){
-    const [name, setName] = useState('');
-    const [artist, setArtist] = useState([]);
+export default function App(){
+    const [artists, setArtist] = useState(initialArtists);
 
     return(
         <>
-            <h1>Inspiring Sculptors is Good!</h1>
-            <input 
-                value={name}
-                onChange={e => setName(e.target.value)}
-            />
-            <button onClick={() => {
-                setArtist([
-                    ...artist,
-                    {id: nextId++, name: name}
-                ]);
-            }}>Add</button>
+            <h1>Inspiring Sculptors</h1>
             <ul>
-                {artist.map(artist => (
-                    <li key={artist.id}>{artist.name}</li>
+                {artists.map(artist => (
+                    <li key={artist.id}>
+                    {artist.name}{' '}
+                    <button onClick={() => {
+                        setArtist(
+                            artists.filter(a =>
+                            a.id !== artist.id)
+                        );
+                    }}>Delete</button>
+                    </li>
                 ))}
             </ul>
         </>
