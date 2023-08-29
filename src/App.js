@@ -39,7 +39,7 @@
 // //   const [index, setIndex] = useState(0);
 // //   const [showMore, setShowMore] = useState(false);
 // //   const hasNext = index < sculptureList.length - 1;
-  
+
 // // function handleNextClick(){
 // //   if(hasNext){
 // //     setIndex(index + 1);
@@ -82,7 +82,7 @@
 
 // // export default function App(){
 // //   const chemist = people.filter(persons=> persons.profession === 'chemist')
-// //   const listItem = chemist.map(useanyname=> 
+// //   const listItem = chemist.map(useanyname=>
 // //       <li key={useanyname.id}>
 // //         <p>My name is {useanyname.name},</p>
 // //         <p>Am a {useanyname.profession} by profession</p>
@@ -181,7 +181,7 @@
 
 // // export default function App(){
 // //   return(
-// //     <Toolbar 
+// //     <Toolbar
 // //       onPlayMovie={()=> alert('Playing!')}
 // //       onUploadImage={()=> alert('Uploading!')}
 // //     />
@@ -214,10 +214,10 @@
 // // import { people } from "./data";
 
 // // export default function App(){
-// //   const chemist = people.filter(person=> 
-// //     person.profession === 'chemist'  
+// //   const chemist = people.filter(person=>
+// //     person.profession === 'chemist'
 // //   );
-// //   const chemis = chemist.map(person=> 
+// //   const chemis = chemist.map(person=>
 // //     <li key={person.id}>
 // //       <p>My Name is {person.name}</p>
 // //       <p>My Profession is {person.profession}</p>
@@ -232,7 +232,7 @@
 // // }
 
 
-// // 
+// //
 
 // // function Toolbar({onPlayMovie, onUploading}){
 // //   return(
@@ -260,9 +260,9 @@
 // // export default function App(){
 // //   return(
 // //     <>
-// //       <Toolbar 
-// //       onPlayMovie={()=> alert('Playing!')} 
-// //       onUploading={()=> alert('Playing!')} 
+// //       <Toolbar
+// //       onPlayMovie={()=> alert('Playing!')}
+// //       onUploading={()=> alert('Playing!')}
 // //       />
 // //       <Toolbar />
 // //     </>
@@ -294,7 +294,7 @@
 // // export default function App(){
 // //   return(
 // //     <>
-// //       <Toolbar 
+// //       <Toolbar
 // //       onPlaying={()=> alert('What My God cannot do, does not exist')}
 // //       onUploading={()=> alert('Please God, do not allow me fall. Amen.')}
 // //       />
@@ -382,7 +382,7 @@
 // // import React, {useState} from "react";
 
 // // export default function App(){
-// //  const [to, setTo] = useState('Alice'); 
+// //  const [to, setTo] = useState('Alice');
 // //  const [message, setMessage] = useState('Hello');
 
 // //  function handleSubmit(e){
@@ -449,7 +449,7 @@
 
 // //   function handleNameChange(e){
 // //     setPerson({
-// //       ...person, 
+// //       ...person,
 // //       name: e.target.value
 // //     });
 // //   }
@@ -488,28 +488,28 @@
 // //     <>
 // //       <label>
 // //         Name:
-// //         <input 
+// //         <input
 // //         value={person.name}
 // //         onChange={handleNameChange}
 // //         />
 // //       </label>
 // //       <label>
 // //         Title:
-// //         <input 
+// //         <input
 // //         value={person.artwork.title}
 // //         onChange={handleTitleChange}
 // //         />
 // //       </label>
 // //       <label>
 // //         City:
-// //         <input 
+// //         <input
 // //         value={person.artwork.city}
 // //         onChange={handleCityChange}
 // //         />
 // //       </label>
 // //       <label>
 // //         Image:
-// //         <input 
+// //         <input
 // //         value={person.artwork.image}
 // //         onChange={handleImageChange}
 // //         />
@@ -520,7 +520,7 @@
 // //         {person.name}
 // //         <br />
 // //       </p>
-// //       <img 
+// //       <img
 // //         src={person.artwork.image}
 // //         alt={person.artwork.title}
 // //       />
@@ -551,12 +551,12 @@
 // //       }
 // //     }));
 // //   }
-  
+
 // //   return(
 // //     <>
 // //       <h1>Art Bucket List</h1>
 // //       <h2>My list of art to see:</h2>
-// //       <ItemList 
+// //       <ItemList
 // //         artworks={list}
 // //         onToggle={handleToggle}
 // //       />
@@ -570,7 +570,7 @@
 // //       {artworks.map(artworks => (
 // //         <li key={artworks.id}>
 // //           <label>
-// //             <input 
+// //             <input
 // //               type="checkbox"
 // //               checked={artworks.id}
 // //               onChange={e => {
@@ -790,7 +790,7 @@
 // //   function handleClick(){
 // //     alert('Heyo People!')
 // //   }
-  
+
 // //   return(
 // //     <button onClick={handleClick}>Click Me!</button>
 // //   );
@@ -975,7 +975,7 @@
 // //       </Button>
 // //       <Button onClick={() => alert('Listening to Music')}>
 // //         Listen to Music
-// //       </Button>  
+// //       </Button>
 // //     </div>
 // //   );
 // // }
@@ -997,7 +997,7 @@
 // //   );
 // // }
 
-// // 
+// //
 
 // // import { useState } from 'react';
 // // import { sculptureList } from './data.js';
@@ -1021,18 +1021,18 @@
 // //         Next
 // //       </button>
 // //       <h2>
-// //         <i>{sculpture.name} </i> 
+// //         <i>{sculpture.name} </i>
 // //         by {sculpture.artist}
 // //       </h2>
-// //       <h3>  
+// //       <h3>
 // //         ({index + 1} of {sculptureList.length})
 // //       </h3>
 // //       <button onClick={handleMoreClick}>
 // //         {showMore ? 'Hide' : 'Show'} details
 // //       </button>
 // //       {showMore && <p>{sculpture.description}</p>}
-// //       <img 
-// //         src={sculpture.url} 
+// //       <img
+// //         src={sculpture.url}
 // //         alt={sculpture.alt}
 // //       />
 // //     </>
@@ -1094,7 +1094,7 @@
 //       Keep Thinking Broo
 //     </button>
 //   );
-//   } 
+//   }
 
 // export default function App(){
 //   return(
@@ -1152,7 +1152,7 @@
 //       Play Movie
 //     </AlertButton>
 //     <AlertButton message='Uploading!'>
-//       Upload 
+//       Upload
 //     </AlertButton>
 //     </>
 //   );
@@ -1194,7 +1194,7 @@
 //         Play Movie
 //       </AlertButton>
 //       <AlertButton message='Uploading !'>
-//         Upload 
+//         Upload
 //       </AlertButton>
 //     </>
 //   );
@@ -1655,7 +1655,7 @@
 //       <h3>
 //         ({index + 1} of {sculptureList.length})
 //       </h3>
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1689,7 +1689,7 @@
 //       <h3>
 //         ({index + 1} of {sculptureList.length})
 //       </h3>
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1723,7 +1723,7 @@
 //       <h3>
 //         ({index + 1} of {sculptureList.length})
 //       </h3>
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1799,7 +1799,7 @@
 //         {showMore ? 'Hide' : 'Show'} details
 //       </button>
 //       {showMore && <p>{sculpture.description}</p>}
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1841,7 +1841,7 @@
 //         {showMore ? 'Hide' : 'Show'} details
 //       </button>
 //       {showMore && <p>{sculpture.description}</p>}
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1883,7 +1883,7 @@
 //         {showMore ? 'Hide' : 'Show'} datails
 //       </button>
 //       {showMore && <p>{sculpture.description}</p>}
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1939,13 +1939,13 @@
 
 //   return(
 //     <>
-//       <button 
+//       <button
 //         onClick={handlePreClick}
 //         disabled={!hasPrev}
 //       >
 //         Previous
 //       </button>
-//       <button 
+//       <button
 //         onClick={handleNextClick}
 //         disabled={!hasNext}
 //       >
@@ -1962,7 +1962,7 @@
 //         {showMore ? 'Hide' : 'Show'} details
 //       </button>
 //       {showMore && <p>{sculpture.description}</p>}
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -1987,7 +1987,7 @@
 //       setIndex(index - 1);
 //     }
 //   }
-  
+
 //   function handleNextClick(){
 //     if(hasNext){
 //       setIndex(index + 1);
@@ -2002,13 +2002,13 @@
 
 //   return(
 //     <>
-//       <button 
+//       <button
 //         onClick={handlePrevClick}
 //         disabled={!hasPrev}
 //       >
 //         Previous
 //       </button>
-//       <button 
+//       <button
 //         onClick={handleNextClick}
 //         disabled={!hasNext}
 //       >
@@ -2025,7 +2025,7 @@
 //         {showMore ? 'Hide' : 'Show'} details
 //       </button>
 //       {showMore && <p>{sculpture.description}</p>}
-//       <img 
+//       <img
 //         src={sculpture.url}
 //         alt={sculpture.alt}
 //       />
@@ -2091,16 +2091,16 @@
 
 //   return(
 //     <form onSubmit={ e => e.preventDefault()}>
-//       <input 
+//       <input
 //         placeholder="First Name"
 //         onChange={handleFirstNameChange}
 //         value={firstName}
-//       /> 
-//       <input 
+//       />
+//       <input
 //         placeholder="Last Name"
 //         onChange={handleLastNameChange}
 //         value={lastName}
-//       /> 
+//       />
 //       <h1>Hi, {firstName} {lastName}</h1>
 //       <button onClick={handleReset}>Reset</button>
 //     </form>
@@ -2128,13 +2128,13 @@
 
 //   return(
 //     <form onSubmit={e => e.preventDefault}>
-//       <input 
+//       <input
 //         placeholder="First Name"
 //         onChange={handleFirstNameChange}
 //         value={firstName}
 //       />
 
-//       <input 
+//       <input
 //         placeholder="Last Name"
 //         onChange={handleLastNameChange}
 //         value={lastName}
@@ -2169,13 +2169,13 @@
 
 //   return(
 //     <form onSubmit={e => e.preventDefault}>
-//       <input 
+//       <input
 //         placeholder="First Name"
 //         value={firstName}
 //         onChange={handleFirstNameChange}
 //       />
 
-//       <input 
+//       <input
 //         placeholder="Last Name"
 //         value={lastName}
 //         onChange={handleLastNameChange}
@@ -2210,13 +2210,13 @@
 
 //   return(
 //     <form onSubmit={e => e.preventDefault}>
-//       <input 
+//       <input
 //         placeholder="First Name"
 //         onChange={handleFirstNameChange}
 //         value={firstName}
 //       />
 
-//       <input 
+//       <input
 //         placeholder="Last Name"
 //         onChange={handleLastNameChange}
 //         value={lastName}
@@ -2245,7 +2245,7 @@
 //         alert(`Sending: "${message}"`);
 //         setIsSent(true);
 //       }}>
-//         <textarea 
+//         <textarea
 //             placeholder="Message"
 //             value={message}
 //             onChange={e => setMessage(e.target.value)}
@@ -2280,7 +2280,7 @@
 //       e.preventDefault();
 //       alert('Thank you for submitting')
 //     }}>
-//       <textarea 
+//       <textarea
 //         placeholder="Text Area"
 //         onChange={handleMessageClick}
 //         value={message}
@@ -2336,11 +2336,11 @@
 //       alert(`Sending: "${message}"`);
 //       setIsSent(true);
 //     }}>
-//       <textarea 
+//       <textarea
 //         placeholder="Text Area"
 //         value={message}
 //         onChange={e => setMessage(e.target.value)}
-//       /> 
+//       />
 //       <br />
 //       <button type="submit">Send</button>
 //     </form>
@@ -2365,7 +2365,7 @@
 //       alert(`Sending "${message}"`);
 //       setIsSent(true);
 //     }}>
-//       <textarea 
+//       <textarea
 //         value={message}
 //         placeholder="Text Area"
 //         onChange={e => setMessage(e.target.value)}
@@ -2394,7 +2394,7 @@
 //       alert(`Sending: "${message}"`);
 //       setIsSent(true);
 //     }}>
-//       <textarea 
+//       <textarea
 //         placeholder="Text Area"
 //         value={message}
 //         onChange={e => setMessage(e.target.value)}
@@ -2427,7 +2427,7 @@
 //       Greet
 //     </button>
 //   );
-// } 
+// }
 
 // Solution to the problem
 
@@ -2436,7 +2436,7 @@
 //     const name = prompt('What is your name?');
 //     alert(`Hello, ${name}`);
 //   }
-  
+
 //   return(
 //     <button onClick={handleClick}>Greet</button>
 //   );
@@ -2459,7 +2459,7 @@
 // import { createRoot } from 'react-dom/clients';
 
 // const root = createRoot(document.getElementById('root'))
-// root.render(<Image />); 
+// root.render(<Image />);
 
 // export default function App(){
 //   return(
@@ -2492,12 +2492,12 @@
 
 //     }}>
 
-//     <textarea 
+//     <textarea
 //       placeholder="Message"
 //       value={message}
 //       onSubmit={e => setMessage(e.target.value)}
-//     />  
-    
+//     />
+
 //     <button type="submit">Send</button>
 //     </form>
 //   );
@@ -2523,7 +2523,7 @@
 //       setIsSent(true);
 //       sendMessage(message);
 //     }}>
-//       <textarea 
+//       <textarea
 //         placeholder="Message"
 //         value={message}
 //         onChange={e => setMessage(e.target.value)}
@@ -2610,7 +2610,7 @@
 //       setIsSent(true);
 //       sendMessage(message);
 //     }}>
-//       <textarea 
+//       <textarea
 //         placeholder="Messsage"
 //         onChange={e => setMessage(e.target.value)}
 //         value={message}
@@ -2749,7 +2749,7 @@
 //         <form onSubmit={handleSummit}>
 //             <label>
 //                 To: {' '}
-//                 <select 
+//                 <select
 //                     onChange={e => setTo(e.target.value)}
 //                     value={to}
 //                 >
@@ -2757,7 +2757,7 @@
 //                     <option valut="Bob">Bob</option>
 //                 </select>
 //             </label>
-//             <textarea 
+//             <textarea
 //                 placeholder="Message"
 //                 value={message}
 //                 onChange={e => setMessage(e.target.value)}
@@ -2835,7 +2835,7 @@
 //             setIsSent(true);
 //             sendMessage(message);
 //         }}>
-//             <textarea 
+//             <textarea
 //                 placeholder="Message"
 //                 value={message}
 //                 onChange={e => setMessage(e.target.value)}
@@ -2843,7 +2843,7 @@
 //         </form>
 
 //     );
-    
+
 //     function sendMessage(message){
 //             // ...
 //         }
@@ -2902,7 +2902,7 @@
 //         <form onSubmit={handleSubmit}>
 //             <label>
 //                 To: {''}
-//                 <select 
+//                 <select
 //                     value={to}
 //                     onChange={e => setTo(e.target.value)}
 //                 >
@@ -2911,7 +2911,7 @@
 //                 </select>
 //             </label>
 //             <br />
-//             <textarea 
+//             <textarea
 //                 placeholder="Message"
 //                 value={message}
 //                 onChange={e => setMessage(e.target.value)}
@@ -3079,7 +3079,7 @@
 // }
 
 // function delay(ms){
-//     return new Promise(resolve => { 
+//     return new Promise(resolve => {
 //         setTimeout(resolve, ms);
 //     });
 // }
@@ -3163,12 +3163,12 @@
 //         y: 0,
 //     });
 
-//     return(  
+//     return(
 //         <div onPointerMove={e => {
 //             position.x = e.clientX
 //             position.y = e.clientY
 //         }}
-        
+
 //         style={{
 //             postion: 'relative',
 //             height: '100vh',
@@ -3185,7 +3185,7 @@
 //             top: -10,
 //             width: 20,
 //             height: 20,
-//         }}/>        
+//         }}/>
 //         </div>
 //     );
 // }
@@ -3210,7 +3210,7 @@
 //             width: '100vw',
 //             height: '100vh',
 //         }}>
-//             <div 
+//             <div
 //                 style={{
 //                     position: 'absolute',
 //                     backgroundColor: 'red',
@@ -3251,7 +3251,7 @@
 //         <>
 //             <label>
 //                 First Name:
-//                 <input 
+//                 <input
 //                     onChange={handleFirstNameChange}
 //                     value={person.firstName}
 //                 />
@@ -3259,7 +3259,7 @@
 
 //             <label>
 //                 Last Name:
-//                 <input 
+//                 <input
 //                     onChange={handleLastNameChange}
 //                     value={person.lastName}
 //                 />
@@ -3267,7 +3267,7 @@
 
 //             <label>
 //                 Email:
-//                 <input 
+//                 <input
 //                     onChange={handleEmailChange}
 //                     value={person.email}
 //                 />
@@ -3306,15 +3306,15 @@
 //         <>
 //             <label>
 //                 First Name:
-//                 <input 
+//                 <input
 //                     onChange={handleFirstNameChange}
 //                     value={person.firstName}
 //                 />
 //             </label>
-            
+
 //             <label>
 //                 Last Name:
-//                 <input 
+//                 <input
 //                     onChange={handleLastNameChange}
 //                     value={person.firstName}
 //                 />
@@ -3322,7 +3322,7 @@
 
 //             <label>
 //                 Email:
-//                 <input 
+//                 <input
 //                     onChange={handleEmailChange}
 //                     value={person.email}
 //                 />
@@ -3345,7 +3345,7 @@
 //     });
 
 //     return(
-//         <div 
+//         <div
 //         onPointerMove={e => {
 //             position.x = e.clientX;
 //             position.y = e.clientY;
@@ -3365,7 +3365,7 @@
 //             top: -10,
 //             width: 20,
 //             height: 20,
-//       }} 
+//       }}
 //             />
 //         </div>
 //     );
@@ -3436,21 +3436,21 @@
 //         <>
 //             <label>
 //                 First Name:
-//                 <input 
+//                 <input
 //                     value={person.firstName}
 //                     onChange={handleFirstNameChange}
 //                 />
 //             </label>
 //             <label>
 //                 Last Name:
-//                 <input 
+//                 <input
 //                     value={person.lastName}
 //                     onChange={handleLastNameChange}
 //                 />
 //             </label>
 //             <label>
 //                 Email:
-//                 <input 
+//                 <input
 //                     value={person.email}
 //                     onChange={handleEmailChange}
 //                 />
@@ -3501,7 +3501,7 @@
 //         <>
 //             <label>
 //                 First Name:
-//                 <input 
+//                 <input
 //                     value={person.firstName}
 //                     onChange={handleFirstNameChange}
 //                 />
@@ -3509,14 +3509,14 @@
 
 //             <label>
 //                 Last Name:
-//                 <input 
+//                 <input
 //                     value={person.lastName}
 //                     onChange={handleLastNameChange}
 //                 />
 //             </label>
 //             <label>
 //                 Email:
-//                 <input 
+//                 <input
 //                     value={person.email}
 //                     onChange={handleEmailChange}
 //                 />
@@ -3525,7 +3525,7 @@
 //             <p>
 //                 {person.firstName} {' '}
 //                 {person.lastName} {' '}
-//                 {person.email} 
+//                 {person.email}
 //             </p>
 //         </>
 //     );
@@ -3553,16 +3553,16 @@
 //             <>
 //                 <label>
 //                     First Name:
-//                     <input 
+//                     <input
 //                         name="firstName"
 //                         value={person.firstName}
 //                         onChange={handleChange}
 //                     />
 //                 </label>
-                
+
 //                 <label>
 //                     Last Name:
-//                     <input 
+//                     <input
 //                         name="email"
 //                         value={person.lastName}
 //                         onChange={handleChange}
@@ -3571,7 +3571,7 @@
 
 //                 <label>
 //                     Email:
-//                     <input 
+//                     <input
 //                         name="email"
 //                         value={person.email}
 //                         onChange={handleChange}
@@ -3609,17 +3609,17 @@
 //     return(
 //         <>
 //             <label>
-//                 First Name: 
-//                 <input 
+//                 First Name:
+//                 <input
 //                     name="firstName"
 //                     value={person.firstName}
 //                     onChange={handleChange}
 //                 />
 //             </label>
-            
+
 //             <label>
-//                 Last Name: 
-//                 <input 
+//                 Last Name:
+//                 <input
 //                     name="lastName"
 //                     value={person.lastName}
 //                     onChange={handleChange}
@@ -3627,8 +3627,8 @@
 //             </label>
 
 //             <label>
-//                 Email: 
-//                 <input 
+//                 Email:
+//                 <input
 //                     name="Email"
 //                     value={person.Email}
 //                     onChange={handleChange}
@@ -3667,7 +3667,7 @@
 //         <>
 //             <label>
 //                 First Name:
-//                 <input 
+//                 <input
 //                     name="firstName"
 //                     value={person.firstName}
 //                     onChange={handleChange}
@@ -3676,16 +3676,16 @@
 
 //             <label>
 //                 Last Name:
-//                 <input 
+//                 <input
 //                     name="lastName"
 //                     value={person.lastName}
 //                     onChange={handleChange}
 //                 />
 //             </label>
-            
+
 //             <label>
 //                 Email:
-//                 <input 
+//                 <input
 //                     name="email"
 //                     value={person.email}
 //                     onChange={handleChange}
@@ -3757,7 +3757,7 @@
 //         <>
 //             <label>
 //                 Name:
-//                 <input 
+//                 <input
 //                     value={person.name}
 //                     onChange={handleNameChange}
 //                 />
@@ -3765,7 +3765,7 @@
 
 //             <label>
 //                 Title:
-//                 <input 
+//                 <input
 //                     value={person.artwork.title}
 //                     onChange={handleTitleChange}
 //                 />
@@ -3773,7 +3773,7 @@
 
 //             <label>
 //                 City:
-//                 <input 
+//                 <input
 //                     value={person.artwork.city}
 //                     onChange={handleCityChange}
 //                 />
@@ -3781,7 +3781,7 @@
 
 //             <label>
 //                 Image:
-//                 <input 
+//                 <input
 //                     value={person.artwork.image}
 //                     onChange={handleImageChange}
 //                 />
@@ -3794,7 +3794,7 @@
 //                 <br />
 //                 (located in {person.artwork.city})
 //             </p>
-//             <img 
+//             <img
 //                 src={person.artwork.image}
 //                 alt={person.artwork.title}
 //             />
@@ -3854,32 +3854,32 @@
 //     return(
 //         <>
 //             <label>
-//                 Name: 
-//                 <input 
+//                 Name:
+//                 <input
 //                     value={person.name}
 //                     onChange={handleNameChange}
 //                 />
 //             </label>
 
 //             <label>
-//                 Title: 
-//                 <input 
+//                 Title:
+//                 <input
 //                     value={person.artwork.title}
 //                     onChange={handleTitleChange}
 //                 />
 //             </label>
 
 //             <label>
-//                 City: 
-//                 <input 
+//                 City:
+//                 <input
 //                     value={person.artwork.city}
 //                     onChange={handleCityChange}
 //                 />
 //             </label>
 
 //             <label>
-//                 Image: 
-//                 <input 
+//                 Image:
+//                 <input
 //                     value={person.artwork.image}
 //                     onChange={handleImageChange}
 //                 />
@@ -3892,7 +3892,7 @@
 //                 <br />
 //                 (located in {person.artwork.city})
 //             </p>
-//             <img 
+//             <img
 //                 src={person.artwork.image}
 //                 alt={person.artwork.title}
 //             />
@@ -3997,7 +3997,7 @@
 // }
 
 // return(
-    
+
 //     <>
 //         <select
 //             value={shape.value}
@@ -4008,10 +4008,10 @@
 //         <option value="yellow"> Yellow</option>
 //         </select>
 
-//         <Background 
+//         <Background
 //             position={initialPosition}
 //         />
-//         <Box 
+//         <Box
 //             color={shape.color}
 //             position={shape.position}
 //             onMove={handleMove}
@@ -4035,7 +4035,7 @@
 //     return(
 //         <>
 //             <h1>Inspiring Sculptures:</h1>
-//             <input 
+//             <input
 //                 value={name}
 //                 onChange={e => setName(e.target.value)}
 //             />
@@ -4067,7 +4067,7 @@
 //     return(
 //         <>
 //             <h1>Inspiring Sculpture:</h1>
-//             <input 
+//             <input
 //                 value={name}
 //                 onChange={e => setName(e.target.value)}
 //             />
@@ -4098,7 +4098,7 @@
 //     return(
 //         <>
 //             <h1>Inspiring Sculptures:</h1>
-//             <input 
+//             <input
 //                 value={name}
 //                 onChange={e => setName(e.target.value)}
 //             />
@@ -4128,7 +4128,7 @@
 // return(
 //     <>
 //         <h1>Inspiring Sculpture:</h1>
-//         <input 
+//         <input
 //             value={name}
 //             onChange={e => setName(e.target.value)}
 //         />
@@ -4157,7 +4157,7 @@
 //     return(
 //         <>
 //             <h1>Inspiring Sculptors:</h1>
-//             <input 
+//             <input
 //                 value={name}
 //                 onChange={e => setName(e.target.value)}
 //             />
@@ -4187,7 +4187,7 @@
 //     return(
 //         <>
 //             <h1>Inspiring Sculptors is Good!</h1>
-//             <input 
+//             <input
 //                 value={name}
 //                 onChange={e => setName(e.target.value)}
 //             />
@@ -4208,16 +4208,47 @@
 
 // Removing from an Array
 
+// import { useState } from "react";
+
+// let initialArtists = [
+//     {id: 0, name: 'Selsa Daniel'},
+//     {id: 0, name: 'Daniel Davou'},
+//     {id: 0, name: 'Great Dan'},
+// ];
+
+// export default function App(){
+//     const [artists, setArtist] = useState(initialArtists);
+
+//     return(
+//         <>
+//             <h1>Inspiring Sculptors for the purpose of learning</h1>
+//             <ul>
+//                 {artists.map(artist => (
+//                     <li key={artist.id}>
+//                     {artist.name}{' '}
+//                     <button onClick={() => {
+//                         setArtist(
+//                             artists.filter(a =>
+//                             a.id !== artist.id)
+//                         );
+//                     }}>Delete</button>
+//                     </li>
+//                 ))}
+//             </ul>
+//         </>
+//     );
+// }
+
 import { useState } from "react";
 
 let initialArtists = [
     {id: 0, name: 'Selsa Daniel'},
-    {id: 0, name: 'Daniel Davou'},
-    {id: 0, name: 'Great Dan'},
+    {id: 0, name: 'Daniel Sels'},
+    {id: 0, name: 'Datuhung Davou'}
 ];
 
 export default function App(){
-    const [artists, setArtist] = useState(initialArtists);
+    const [artists, setArtists] = useState(initialArtists);
 
     return(
         <>
@@ -4225,13 +4256,15 @@ export default function App(){
             <ul>
                 {artists.map(artist => (
                     <li key={artist.id}>
-                    {artist.name}{' '}
-                    <button onClick={() => {
-                        setArtist(
-                            artists.filter(a =>
-                            a.id !== artist.id)
-                        );
-                    }}>Delete</button>
+                        {artist.name}{' '}
+                        <button onClick={() => {
+                            setArtists(
+                                artists.filter( a => 
+                                a.id !== artist.id)
+                            );
+                        }}>
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>
